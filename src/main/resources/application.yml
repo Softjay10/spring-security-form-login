@@ -1,0 +1,49 @@
+## JPA
+#spring:
+#  jpa:
+#  properties:
+#  hibernate:
+#  dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+#  ddl-auto: update
+#  # MySql
+#  datasource:
+#    url: jdbc:mysql://localhost/spring-security-form-login
+#    username: root
+#    password:
+#    # Connection Pool
+#    hikari:
+#      connection-timeout: 20000
+#      minimum-idle: 10
+#      maximum-pool-size: 10
+#      idle-timeout: 10000
+#      max-lifetime: 1000
+#      auto-commit: true
+
+## YAML Template.
+server:
+  port: 8080
+# spring
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sample_db?createDatabaseIfNotExist=true&useUnicode=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Manila
+    username: root
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+      # Connection Poo
+      hikari:
+        max-lifetime: 1800000
+        minimum-idle: 1
+        maximum-pool-size: 10
+        connection-timeout: 3000
+        pool-name: myConnPool
+        leak-detection-threshold: 45000
+        register-mbeans: true
+        auto-commit: true
+
+
+
+
